@@ -47,7 +47,7 @@ input[type=color]{height:46px;padding:3px}
 .dbg{background:linear-gradient(180deg,#ffe3da 0%,#fff3dc 50%,#e8f0ff 100%);min-height:calc(100vh - 230px);padding-bottom:30px}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .dbg{background:linear-gradient(180deg,#34202a 0%,#2e2619 50%,#1b2236 100%)}}
 :root[data-theme="dark"] .dbg{background:linear-gradient(180deg,#34202a 0%,#2e2619 50%,#1b2236 100%)}
-</style></head><body>
+</style><link rel="manifest" href="manifest.webmanifest"><meta name="theme-color" content="#5b4bdb"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png"></head><body>
 <header><button class="mn" id="mn" aria-label="menu">⋮</button><div class="t" id="lb"></div><div class="tot" id="tot"></div>
 <div class="per"><button id="pv">«</button><div class="pill" id="pm"></div><button id="pn">»</button></div></header>
 <div id="v"></div>
@@ -225,4 +225,5 @@ window.cloudLogin=async()=>{try{await signInWithPopup(auth,new GoogleAuthProvide
 window.cloudLogout=()=>signOut(auth);
 onAuthStateChanged(auth,u=>{window.CU=u;if(u)pull();if(document.getElementById('sp'))setp()});
 </script>
+<script>if('serviceWorker' in navigator){window.addEventListener('load',()=>navigator.serviceWorker.register('sw.js').catch(()=>{}))}</script>
 </body></html>
